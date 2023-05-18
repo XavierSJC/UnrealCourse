@@ -30,3 +30,6 @@ This project address:
 * **Modular level design**
 * **Line Tracing andd Collisions**
 * **Loop Statements**
+
+### Crypt Raider Disclaimeir
+This project is corrupted, while migrating the Unreal files to Git-LFS system I did a mistake and lost all assets files, to don't lost all the work that I did I kept the source files and other files.
