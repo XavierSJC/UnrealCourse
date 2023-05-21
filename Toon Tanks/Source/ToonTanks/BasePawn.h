@@ -6,6 +6,9 @@
 #include "GameFramework/Pawn.h"
 #include "BasePawn.generated.h"
 
+/// Documetation to UPROPERTY Specifiers
+/// https://docs.unrealengine.com/5.1/en-US/unreal-engine-uproperty-specifiers/
+
 UCLASS()
 class TOONTANKS_API ABasePawn : public APawn
 {
@@ -14,6 +17,18 @@ class TOONTANKS_API ABasePawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
+
+	UPROPERTY(VisibleAnywhere)
+	int32 VisibleAnywhereInt = 12;
+
+	UPROPERTY(EditAnywhere)
+	int32 EditAnywhereInt = 12;
+
+	UPROPERTY(VisibleInstanceOnly)
+	int32 VisibleInstanceOnlyInt = 12;
+
+	UPROPERTY(EditAnywhere)
+	int AmmoAmount = 18;
 
 protected:
 	// Called when the game starts or when spawned
