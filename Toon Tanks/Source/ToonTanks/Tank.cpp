@@ -39,3 +39,10 @@ void ATank::Turn(float Value)
     AddActorLocalRotation(deltaRotator, true);
 }
 
+// Called when the game starts or when spawned
+void ATank::BeginPlay()
+{
+	Super::BeginPlay();
+	
+    PlayerControllerRef = Cast<APlayerController>(GetController());
+}

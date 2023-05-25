@@ -19,6 +19,10 @@ public:
 
 	// Called to bind functionality to input
 	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 	
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, category = "Moviment", meta = (AllowPrivateAccess = "true"))
@@ -32,6 +36,8 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Camera", meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* CameraComponent;
+
+	APlayerController* PlayerControllerRef;
 
 	void Move(float Value);
 	void Turn(float Value);

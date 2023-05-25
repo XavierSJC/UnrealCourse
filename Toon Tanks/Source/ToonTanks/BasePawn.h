@@ -33,10 +33,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int AmmoAmount = 18;
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* CapsuleComp;
