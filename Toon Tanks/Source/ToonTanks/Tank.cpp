@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "DrawDebugHelpers.h"
 
 ATank::ATank()
 {
@@ -45,4 +46,28 @@ void ATank::BeginPlay()
 	Super::BeginPlay();
 	
     PlayerControllerRef = Cast<APlayerController>(GetController());
+}
+
+void ATank::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+
+    if (PlayerControllerRef)
+    {
+        FHitResult hitResult;
+        
+        if(PlayerControllerRef->GetHitResultUnderCursor(
+            ECollisionChannel::ECC_Visibility, 
+            false, 
+            hitResult))
+            {
+                DrawDebugSphere(
+                    GetWorld(),
+                    hitResult.ImpactPoint,
+                    15.f,
+                    20,
+                    FColor::Red
+                );
+            }
+    }
 }
