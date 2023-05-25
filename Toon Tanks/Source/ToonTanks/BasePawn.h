@@ -33,6 +33,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int AmmoAmount = 18;
 
+protected:
+
+	void RotateTurret(FVector LookAtTarget);
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Components", meta = (AllowPrivateAccess = "true"))
 	class UCapsuleComponent* CapsuleComp;
@@ -49,4 +53,6 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, category = "Super Duper Variables", meta = (AllowPrivateAccess = "true"))
 	int32 EditAnywhereInt = 22;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, category = "Moviment", meta = (AllowPrivateAccess = "true"))
+	float SpeedTurret = 5.f;
 };
