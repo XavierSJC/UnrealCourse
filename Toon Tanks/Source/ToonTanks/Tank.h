@@ -21,6 +21,9 @@ public:
 	void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 private:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, category = "Moviment", meta = (AllowPrivateAccess = "true"))
+	float Speed = 200.f;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Camera", meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArmComponent;
 
