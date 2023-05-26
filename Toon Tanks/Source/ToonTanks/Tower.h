@@ -29,4 +29,11 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, category = "Moviment", meta = (AllowPrivateAccess = "true"))
 	float FireRange = 500;
+
+	FTimerHandle FireRateTimerHandle;
+	float FireRate = 2.f;
+
+	void CheckFireCondition();
+
+	bool IsTankInRange() const;
 };
