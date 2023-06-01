@@ -1,6 +1,7 @@
 # Unreal course
 
-This code was created with proposed to study following the lecture from cours **[Unreal Engine 5 C++ Developer: Learn C++ & Make Video Games](https://www.udemy.com/course/unrealcourse/https://www.udemy.com/course/unrealcourse/)**
+This code was created with proposed to study following the lecture from course **[Unreal Engine 5 C++ Developer: Learn C++ & Make Video Games](https://www.udemy.com/course/unrealcourse/https://www.udemy.com/course/unrealcourse/)**.
+You can see the exactly content of the course in this [repository](https://gitlab.com/GameDevTV/Unreal5CPP)
 
 Each Unreal project is a section of this couse.
 
@@ -33,3 +34,6 @@ This project address:
 
 ### Crypt Raider Disclaimeir
 This project is corrupted, while migrating the Unreal files to Git-LFS system I did a mistake and lost all assets files, to don't lost all the work that I did I kept the source files and other files.
+
+## Toon Tanks
+The player controls a tank and the mission is to destroy all the turrets and keep yourself alive!
