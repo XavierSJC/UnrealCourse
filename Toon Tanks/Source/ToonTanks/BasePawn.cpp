@@ -48,6 +48,7 @@ void ABasePawn::Fire()
 	if (!ProjectileSpawnPoint)
 		return;
 
+	/*
 	DrawDebugSphere(
 		GetWorld(), 
 		ProjectileSpawnPoint->GetComponentLocation(), 
@@ -57,6 +58,7 @@ void ABasePawn::Fire()
 		false, 
 		3.f
 	);
+	*/
 
 	GetWorld()->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
 }
