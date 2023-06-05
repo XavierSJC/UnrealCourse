@@ -56,4 +56,7 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, category = "Moviment", meta = (AllowPrivateAccess = "true"))
 	float SpeedTurret = 5.f;
+
+	UPROPERTY(EditDefaultsOnly, category = "Projectile")
+	TSubclassOf<class AProjectile> ProjectileClass;
 };
