@@ -29,10 +29,14 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-	// ...
+
 }
 
 void UHealthComponent::DamageTaken(AActor* DamagedActor, float Damage, const UDamageType* DamageType, AController* Instigator, AActor* DamageCauser)
 {
+	if (Damage <= 0.f) return;
+	if (Health <= 0.f) return;
 
+	Health -= Damage;
+	UE_LOG(LogTemp, Warning, TEXT("Health: %f"), Health);
 }
