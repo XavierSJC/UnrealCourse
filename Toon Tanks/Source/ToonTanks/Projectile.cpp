@@ -23,6 +23,7 @@ void AProjectile::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	BaseMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnProjectileHit);
 }
 
 // Called every frame
@@ -32,3 +33,10 @@ void AProjectile::Tick(float DeltaTime)
 
 }
 
+void AProjectile::OnProjectileHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	UE_LOG(LogTemp, Display, TEXT("Project hit"));
+	UE_LOG(LogTemp, Display, TEXT("HitComp name: %s"), *HitComp->GetName());
+	UE_LOG(LogTemp, Display, TEXT("OtherActor name: %s"), *OtherActor->GetName());
+	UE_LOG(LogTemp, Display, TEXT("OtherComp name: %s"), *OtherComp->GetName());
+}
