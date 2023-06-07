@@ -41,3 +41,9 @@ bool ATower::IsTankInRange() const
     float distance = FVector::Dist(GetActorLocation(), TankRef->GetActorLocation());
     return (distance <= FireRange);
 }
+
+void ATower::HandleDestruction()
+{
+    Super::HandleDestruction();
+    Destroy();
+}
