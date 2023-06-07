@@ -28,6 +28,21 @@ void AToonTanksGameMode::BeginPlay()
 {
     Super::BeginPlay();
 
+    HandleGameStart();
+}
+
+void AToonTanksGameMode::HandleGameStart()
+{
     Tank = Cast<ATank>(UGameplayStatics::GetPlayerPawn(this, 0));
     ToonTanksPlayerController = Cast<AToonTanksPlayerController>(UGameplayStatics::GetPlayerController(this, 0));
+
+    if (!ToonTanksPlayerController)
+        return;
+
+    ToonTanksPlayerController->SetPlayerEnabledState(false);
+    FTimerHandle playerEnableTimerHandle;
+    FTimerDelegate playerEnableTimerDelegate =
+        FTimerDelegate::CreateUObject(ToonTanksPlayerController, &AToonTanksPlayerController::SetPlayerEnabledState, true);
+    GetWorldTimerManager().SetTimer(playerEnableTimerHandle, playerEnableTimerDelegate, StartDelay, false);
+    
 }
