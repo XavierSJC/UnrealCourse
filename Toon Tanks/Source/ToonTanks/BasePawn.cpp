@@ -66,5 +66,10 @@ void ABasePawn::Fire()
 
 void ABasePawn::HandleDestruction()
 {
-	// TODO: Visual/Sound effects
+	if (!DeadAnimation) return;
+
+	UGameplayStatics::SpawnEmitterAtLocation(this,
+			DeadAnimation,
+			GetActorLocation(),
+			GetActorRotation());
 }

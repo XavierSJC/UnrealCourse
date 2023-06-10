@@ -49,6 +49,9 @@ private:
 	UStaticMeshComponent* TurretMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Components", meta = (AllowPrivateAccess = "true"))
 	USceneComponent* ProjectileSpawnPoint;
+	UPROPERTY(EditAnywhere, Category = "Components")
+	class UParticleSystem* DeadAnimation;
+
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Super Duper Variables", meta = (AllowPrivateAccess = "true"))
 	int32 VisibleAnywhereInt = 12;
