@@ -27,6 +27,9 @@ public:
 	UStaticMeshComponent* BaseMesh;
 
 private:
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	class UParticleSystem* HitParticles;
+
 	UPROPERTY(EditAnywhere)
 	float Damage = 50.f;
 
