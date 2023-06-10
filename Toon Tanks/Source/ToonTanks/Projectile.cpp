@@ -4,6 +4,7 @@
 #include "Projectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "GameFramework/DamageType.h"
+#include "Particles/ParticleSystemComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values
@@ -14,8 +15,10 @@ AProjectile::AProjectile()
 
 	BaseMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Base Mesh"));
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
+	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Particle System Component"));
 	
 	RootComponent = BaseMesh;
+	ParticleSystemComponent->SetupAttachment(RootComponent);
 	ProjectileMovementComponent->InitialSpeed = 10.f;
 	ProjectileMovementComponent->MaxSpeed = 20.f;
 }
@@ -54,7 +57,7 @@ void AProjectile::OnProjectileHit(UPrimitiveComponent* HitComp, AActor* OtherAct
 			HitParticles,
 			GetActorLocation(),
 			GetActorRotation());
-		
+
 	}
 
 	Destroy();
