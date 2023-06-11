@@ -12,7 +12,7 @@ ATank::ATank()
     SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
     CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
-    SpringArmComponent->SetupAttachment(RootComponent);
+    SpringArmComponent->SetupAttachment(TurretMesh);
     CameraComponent->SetupAttachment(SpringArmComponent);
 }
 
