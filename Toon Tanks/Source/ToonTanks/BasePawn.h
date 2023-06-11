@@ -66,4 +66,7 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, category = "Projectile")
 	TSubclassOf<class AProjectile> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, category = "Moviment")
+	TSubclassOf<class UCameraShakeBase> DeathCameraShakeClass;
 };
