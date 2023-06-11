@@ -51,6 +51,8 @@ private:
 	USceneComponent* ProjectileSpawnPoint;
 	UPROPERTY(EditAnywhere, Category = "Components")
 	class UParticleSystem* DeadAnimation;
+	UPROPERTY(EditAnywhere, category = "Songs")
+	class USoundBase* DeathSound;
 
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, category = "Super Duper Variables", meta = (AllowPrivateAccess = "true"))

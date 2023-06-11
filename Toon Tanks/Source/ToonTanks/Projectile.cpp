@@ -29,6 +29,7 @@ void AProjectile::BeginPlay()
 	Super::BeginPlay();
 	
 	BaseMesh->OnComponentHit.AddDynamic(this, &AProjectile::OnProjectileHit);
+	PlaySound(LaunchSound);
 }
 
 // Called every frame
@@ -53,12 +54,22 @@ void AProjectile::OnProjectileHit(UPrimitiveComponent* HitComp, AActor* OtherAct
 	if (OtherActor && OtherActor != this && OtherActor != owner)
 	{
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, owner->GetInstigatorController(), this, UDamageType::StaticClass());
-		UGameplayStatics::SpawnEmitterAtLocation(this,
-			HitParticles,
-			GetActorLocation(),
-			GetActorRotation());
-
+		if (HitParticles)
+		{
+			UGameplayStatics::SpawnEmitterAtLocation(this,
+				HitParticles,
+				GetActorLocation(),
+				GetActorRotation());
+		}
+		PlaySound(HitSound);
 	}
-
 	Destroy();
+}
+
+void AProjectile::PlaySound(USoundBase* sound)
+{
+	if (sound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, sound, GetActorLocation());
+	}
 }
