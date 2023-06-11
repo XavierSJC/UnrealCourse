@@ -16,7 +16,7 @@ This project gives basic concepts to Unreal and C++:
 ## Obstacule Assaults
 Platform game, the character should jump over multiple platforms, the objective is to reach the end of the track.
 
-This project addresses:
+This project has:
 * **Add more levels**
 * **Rotation back and forty**
 * **Configure move end and locations**
@@ -24,7 +24,7 @@ This project addresses:
 ## Crypt Raider
 The player has to explore a little prison to recover a small statue stolen from your house, but this prison has some traps and puzzles to resolve.
 
-This project address:
+This project has:
 * **Pointer and Reference**
 * **Actor and Scene Coponents**
 * **Lighting with Lumen**
@@ -37,3 +37,11 @@ This project is corrupted, while migrating the Unreal files to Git-LFS system I 
 
 ## Toon Tanks
 The player controls a tank and the mission is to destroy all the turrets and keep yourself alive!
+
+This project has:
+* **Handle Inputs**
+* **Creating class and inheritance**
+* **Handle of fire and projectiles**
+* **Management health, damage, and destruction**
+* **Handling win/lose conditions and Widgets**
+* **Adding special effects such as smoke, explosions, and sounds**
